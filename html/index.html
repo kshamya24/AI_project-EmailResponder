@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>InboxPilot – Never miss a message hiding in spam</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="plane" aria-hidden="true">✈</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="wrap">
+<nav><b>✈ InboxPilot</b><div><a href="#checker">Spam checker</a><a href="#coach">Writing coach</a></div></nav>
+
+<div class="hero">
+<div>
+<h1>Never miss an important email hiding in spam.</h1>
+<p class="sub">InboxPilot tells you the moment a message lands in spam, checks suspicious emails for you, and polishes your replies so clients in any country understand you clearly.</p>
+<a class="btn" href="#checker">Check a message</a> <a class="btn ghost" href="#coach">Improve my email</a>
+</div>
+<div class="inbox" aria-label="Live inbox demo">
+<header><span>Inbox</span><span>Spam <span class="badge zero" id="badge">0</span></span></header>
+<div class="mail"><b>Priya (Client, UK)</b><small>Re: Project proposal – can we talk Monday?</small></div>
+<div class="mail"><b>Accounts Team</b><small>Invoice #2041 attached</small></div>
+<div id="spamlist"></div>
+<footer><button class="btn" id="sim">Simulate a spam arrival</button><small style="color:var(--mute)">Try it – you'll get an alert.</small></footer>
+</div>
+</div>
+</div>
+
+<section id="checker"><div class="wrap">
+<h2>Is this message spam?</h2>
+<p class="lead">Paste the sender, subject or full text. The check runs in your browser, so nothing is sent anywhere.</p>
+<div class="tool">
+<label for="spamIn" class="lead" style="display:block;margin-bottom:8px">Message text</label>
+<textarea id="spamIn" placeholder="Paste the email here…"></textarea>
+<div class="row"><button class="btn" id="spamGo">Check message</button><button class="btn ghost" id="spamEx">Use a sample</button></div>
+<div class="res" id="spamRes" aria-live="polite"></div>
+</div></div></section>
+
+<section id="coach"><div class="wrap">
+<h2>Writing coach for client emails</h2>
+<p class="lead">Write your email, pick your client's region, and get fixes plus clearer wording.</p>
+<div class="tool">
+<div class="row" style="margin:0 0 12px">
+<label for="region">Client's English:</label>
+<select id="region"><option value="us">United States</option><option value="uk">United Kingdom</option><option value="au">Australia</option><option value="in">India</option></select>
+<label for="tone">Tone:</label>
+<select id="tone"><option value="formal">Formal</option><option value="friendly">Friendly</option></select>
+</div>
+<textarea id="mailIn" placeholder="Write your email here…"></textarea>
+<div class="row"><button class="btn" id="mailGo">Get suggestions</button><button class="btn ghost" id="mailEx">Use a sample</button></div>
+<div class="res" id="mailRes" aria-live="polite"></div>
+</div></div></section>
+
+<div class="wrap"><footer class="f">InboxPilot prototype. The spam check and writing tips use built-in rules, not a trained model. Always verify unfamiliar senders yourself.</footer></div>
+<script src="../js/script.js"></script>
+</body>
+</html>
